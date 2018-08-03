@@ -165,6 +165,7 @@ return [
         Laravel\Scout\ScoutServiceProvider::class,
         ScoutEngines\Elasticsearch\ElasticsearchProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        SocialiteProviders\Manager\ServiceProvider::class, // add weibo
 
     ],
 
@@ -215,7 +216,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
-
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class, // add
     ],
 
 ];

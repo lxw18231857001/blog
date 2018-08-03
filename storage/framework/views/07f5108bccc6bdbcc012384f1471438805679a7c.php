@@ -46,10 +46,12 @@
                 <input type="checkbox" value="1" name="is_remember"> 记住我
             </label>
 
-            <a class="btn btn-link" href="<?php echo e(route('password.request')); ?>">
+            
+            <a class="btn btn-link" href="password/reset">
                 <?php echo e(__('Forgot Your Password?')); ?>
 
             </a>
+            <a href="/auth/weibo"><img src="/storage/photo/240.png" alt="微博登录"></a>
         </div>
         <?php echo $__env->make('layout.error', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 

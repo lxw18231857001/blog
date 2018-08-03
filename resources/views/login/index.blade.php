@@ -45,9 +45,13 @@
                 <input type="checkbox" value="1" name="is_remember"> 记住我
             </label>
 
-            <a class="btn btn-link" href="{{ route('password.request') }}">
+            {{--<a class="btn btn-link" href="{{ route('password.request') }}">
+                {{ __('Forgot Your Password?') }}
+            </a>--}}
+            <a class="btn btn-link" href="password/reset">
                 {{ __('Forgot Your Password?') }}
             </a>
+            <a href="/auth/weibo"><img src="/storage/photo/240.png" alt="微博登录"></a>
         </div>
         @include('layout.error')
 

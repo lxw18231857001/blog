@@ -4,19 +4,32 @@
     return view('welcome',['website'=>'<strong>Laravel</strong>']);
 });*/
 
-Route::get('/', "\App\Http\Controllers\LoginController@index")->name('login');
+
 //用户模块
 //登录页面
+Route::get('/', "\App\Http\Controllers\LoginController@index")->name('/');
+
 Route::get('/login', "\App\Http\Controllers\LoginController@index")->name('login');
 //登录行为
 Route::post('/login', '\App\Http\Controllers\LoginController@login');
 //登出行为
 Route::get('/logout', '\App\Http\Controllers\LoginController@logout');
 //注册页面
-Route::get('/registers', '\App\Http\Controllers\RegisterController@index');
+Route::get('/registers', '\App\Http\Controllers\RegisterController@index')->name('register');
 //注册行为
 Route::post('/register', '\App\Http\Controllers\RegisterController@register');
 
+// 引导用户到新浪微博的登录授权页面
+Route::get('auth/weibo', 'Auth\AuthController@weibo');
+// 用户授权后新浪微博回调的页面
+Route::get('auth/callback', 'Auth\AuthController@callback');
+
+
+//忘记密码，重置密码
+Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::group(['middleware' => 'auth:web'], function () {
 //个人设置页面
@@ -26,10 +39,7 @@ Route::group(['middleware' => 'auth:web'], function () {
 //修改密码
     Route::get('/user/{user}/updatePassword', '\App\Http\Controllers\UserController@updatePassword');
     Route::post('/user/{user}/updatePassword', '\App\Http\Controllers\UserController@storePassword');
-//忘记密码，重置密码
-    Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
 
-//    ROute::get('password/reset','Auth\ForgotPasswordController@showLinkRequestForm');
 //专题详情页面
     Route::get('/topic/{topic}', '\App\Http\Controllers\TopicController@show');
 //投稿
@@ -78,7 +88,6 @@ Route::group(['middleware' => 'auth:web'], function () {
 });
 
 
-
 //后台路由
 include_once('admin.php');
 
@@ -88,8 +97,9 @@ include_once('admin.php');
        return 'this is log33333in';
    });
 });*/
-Auth::routes();
 
+
+//Auth::routes();
 //Route::get('/home', 'HomeController@index')->name('home');
 
 
