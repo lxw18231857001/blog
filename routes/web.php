@@ -6,6 +6,7 @@
 
 
 //用户模块
+
 //登录页面
 Route::get('/', "\App\Http\Controllers\LoginController@index")->name('/');
 
