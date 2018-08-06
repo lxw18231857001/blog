@@ -11,7 +11,7 @@ class User extends Authenticatable
     use Notifiable;
     //
     protected $fillable = [
-        'name', 'password', 'email'
+        'name', 'password', 'email','avatar','third_id'
     ];
 
     //用户的文章列表

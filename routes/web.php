@@ -23,7 +23,7 @@ Route::post('/register', '\App\Http\Controllers\RegisterController@register');
 // 引导用户到新浪微博的登录授权页面
 Route::get('auth/weibo', 'Auth\AuthController@weibo');
 // 用户授权后新浪微博回调的页面
-Route::get('auth/callback', 'Auth\AuthController@callback');
+Route::get('auth/callback/', 'Auth\AuthController@callback');
 
 
 //忘记密码，重置密码
@@ -31,6 +31,7 @@ Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm'
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+//绑定用户
 
 Route::group(['middleware' => 'auth:web'], function () {
 //个人设置页面
