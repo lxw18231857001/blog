@@ -90,6 +90,7 @@ class UserController extends Controller
     //修改密码
     public function updatePassword(User $user)
     {
+//        dd($user);
         return view('user/updatePassword', compact('user'));
     }
 

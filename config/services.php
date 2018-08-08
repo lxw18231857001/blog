@@ -39,5 +39,11 @@ return [
         'client_secret' => env('WEIBO_SECRET','86ae955d5b607a58acdb079d79200836'),
         'redirect' => env('WEIBO_REDIRECT_URI','http://test.open.lixiaowang.top/auth/callback'),
     ],
+    'qq' => [
+        'client_id' => env('QQ_KEY'),
+        'client_secret' => env('QQ_SECRET'),
+        'redirect' => env('QQ_REDIRECT_URI')
+    ],
+
 
 ];

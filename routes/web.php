@@ -25,6 +25,12 @@ Route::get('auth/weibo', 'Auth\AuthController@weibo');
 // 用户授权后新浪微博回调的页面
 Route::get('auth/callback/', 'Auth\AuthController@callback');
 
+//qq登录授权页面
+Route::get('auth/qq', 'Auth\AuthController@qqlogin');
+//qq授权后回调的页面
+Route::get('auth/qqcallback/', 'Auth\AuthController@qqcallback');
+
+
 
 //忘记密码，重置密码
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');

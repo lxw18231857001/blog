@@ -78,29 +78,85 @@ class AuthController extends Controller
 
     }
 
-    //使用微博账号信息登录系统  展示微博账号信息
-   /* public function third_login($user)
+    //qq授权页面
+    public function qqlogin()
     {
-        $is_user = user::where('third_id', $user->sina_id)->first();
+        return Socialite::driver('qq')->redirect();
+        // return \Socialite::with('weibo')->scopes(array('email'))->redirect();
+    }
 
-        Auth::guard('web')->login($is_user, $remember = false);
-        if (\Auth::check()) {//授权成功
+    //qq回调地址
+    public function qqcallback()
+    {
+        $user = Socialite::driver('qq')->user();
+        /*$accessTokenResponseBody = $user->accessTokenResponseBody;
+        dd($accessTokenResponseBody);*/
+        // dd($user);
 
-            $user = Auth::user();
-            echo 'true';
+        $openid = $user->getId();
+        $name = $user->getNickname();
+        $email = $user->getEmail();
+        $avatar = $user->getAvatar();
+        $password = 0;
 
-            return \redirect('http://test.open.lixiaowang.top/posts');
-            dd($user);
+        $res = User::where('openid', $openid)->first();
+//        dd($res);
+        if (empty($res)) {//不存在
+            $userModel = User::create(compact('name', 'email', 'avatar', 'password', 'openid'));
+//dd($userModel);
+            Auth::login($userModel, false);
+            if (\Auth::check()) {//授权成功
+                /*$uu=Auth::user();
+                dd($uu);*/
+                return \redirect('/posts');
+            } else {
+                return \Redirect::back()->withErrors('授权失败');
+            }
+        } else {//存在
+            $is_user = user::where('openid', $res->openid)->first();
 
-        } else {
+            Auth::login($is_user, false);
 
-            $user = Auth::user();
-            echo 'false';
-
-            return \Redirect::back()->withErrors('授权失败');
-            dd($user);
-
+            if (\Auth::check()) {//授权成功
+                /*  $uu=Auth::user();
+                  dd($uu);*/
+                return \redirect('/posts');
+            } else {
+                return \Redirect::back()->withErrors('授权失败');
+            }
         }
 
-    }*/
+    }
+
+
+
+
+
+
+
+    //使用微博账号信息登录系统  展示微博账号信息
+    /* public function third_login($user)
+     {
+         $is_user = user::where('third_id', $user->sina_id)->first();
+
+         Auth::guard('web')->login($is_user, $remember = false);
+         if (\Auth::check()) {//授权成功
+
+             $user = Auth::user();
+             echo 'true';
+
+             return \redirect('http://test.open.lixiaowang.top/posts');
+             dd($user);
+
+         } else {
+
+             $user = Auth::user();
+             echo 'false';
+
+             return \Redirect::back()->withErrors('授权失败');
+             dd($user);
+
+         }
+
+     }*/
 }

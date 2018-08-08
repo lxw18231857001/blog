@@ -52,6 +52,7 @@
                 {{ __('Forgot Your Password?') }}
             </a>
             <a href="/auth/weibo"><img src="/storage/photo/240.png" alt="微博登录"></a>
+            <a href="/auth/qq"><img src="/storage/photo/Connect_logo_4.png" alt="QQ登录"></a>
         </div>
         @include('layout.error')
 
