@@ -35,9 +35,9 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
     'weibo' => [
-        'client_id' => env('WEIBO_KEY','2700687630'),
-        'client_secret' => env('WEIBO_SECRET','86ae955d5b607a58acdb079d79200836'),
-        'redirect' => env('WEIBO_REDIRECT_URI','http://test.open.lixiaowang.top/auth/callback'),
+        'client_id' => env('WEIBO_KEY','你的app_key'),
+        'client_secret' => env('WEIBO_SECRET','你的app_secret'),
+        'redirect' => env('WEIBO_REDIRECT_URI','域名/auth/callback'),
     ],
     'qq' => [
         'client_id' => env('QQ_KEY'),
