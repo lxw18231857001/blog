@@ -35,9 +35,12 @@
 
     <form class="form-signin" method="POST" action="/register">
         {{csrf_field()}}
-        <h2 class="form-signin-heading">请注册</h2>
+        <h2 class="form-signin-heading">请注册  <p style="float: right"><a class="btn btn-link" href="login">
+                    已有账号？去登陆
+                </a></p></h2>
+
         <label for="name" class="sr-only">名字</label>
-        <input type="text" name="name" id="name" class="form-control" placeholder="名字" value="{{$user->nickname}}" required autofocus>
+        <input type="text" name="name" id="name" class="form-control" placeholder="名字" value="" required autofocus>
         <label for="inputEmail" class="sr-only">邮箱</label>
         <input type="email" name="email" id="inputEmail" class="form-control" placeholder="邮箱" required autofocus>
         <label for="inputPassword" class="sr-only">密码</label>

@@ -27,8 +27,9 @@
                             </div>
                             <!-- /.box-header -->
                             <!-- form start -->
-                            <form role="form" action="/admin/files/import" method="POST" enctype="multipart/form-data">
-                            {{csrf_field()}}
+                            <form role="form" action="{{url('/admin/files/import')}}" method="POST"
+                                  enctype="multipart/form-data">
+                                {{csrf_field()}}
                                 <div class="box-body">
                                     {{--<div class="form-group">
                                         <label for="exampleInputEmail1">用户名</label>
@@ -36,7 +37,11 @@
                                     </div>--}}
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">文件导入</label>
-                                        <input type="file"  placeholder="" name="file">
+                                        <div style="float: right;padding-right: 70%"><a href="/storage/photo/moban.png">Excel导入模板</a>
+                                            &nbsp;&nbsp;<a href="{{url('/admin/files/downloadExcel')}}">Excel模板下载</a>
+                                        </div>
+                                        {{--<img class="pimg" src="/storage/photo/moban.png" alt="Excel导入模板">--}}
+                                        <input type="file" placeholder="" name="file">
                                     </div>
                                 </div>
                                 <div class="box-footer">
@@ -44,6 +49,11 @@
                                 </div>
                             </form>
                             @include('layout.error')
+                            @if(!empty(session('success')))
+                                <div class="alert alert-success" role="alert">
+                                    {{session('success')}}
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -51,4 +61,5 @@
         </section>
         <!-- /.content -->
     </div>
+
 @endsection

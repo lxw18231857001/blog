@@ -1,7 +1,7 @@
 <?php
-//use weibo/saetv2.ex.class.php;
+//use WeiBo/saetv2.ex.class.php;
 //require_once 'config/consta';
-require_once __DIR__.'/../app/Libraries/weibo/saetv2.ex.class.php';
+require_once __DIR__ . '/../app/Libraries/WeiBo/saetv2.ex.class.php';
 
 define('WEIBO_KEY','2700687630');
 define('WEIBO_SECRET','86ae955d5b607a58acdb079d79200836');

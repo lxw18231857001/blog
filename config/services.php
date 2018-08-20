@@ -34,10 +34,10 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
-    'weibo' => [
-        'client_id' => env('WEIBO_KEY','你的app_key'),
-        'client_secret' => env('WEIBO_SECRET','你的app_secret'),
-        'redirect' => env('WEIBO_REDIRECT_URI','域名/auth/callback'),
+    'WeiBo' => [
+        'client_id' => env('WEIBO_KEY'),
+        'client_secret' => env('WEIBO_SECRET'),
+        'redirect' => env('WEIBO_REDIRECT_URI'),
     ],
     'qq' => [
         'client_id' => env('QQ_KEY'),

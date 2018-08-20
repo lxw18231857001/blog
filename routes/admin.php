@@ -64,6 +64,7 @@ Route::prefix('admin')->group(function () {
         Route::group(['middlewre' => 'can:file'], function () {
             Route::get('/files  ', '\App\Admin\Controllers\ExcelController@index');
             Route::get('/files/export', '\App\Admin\Controllers\ExcelController@export');
+            Route::get('/files/downloadExcel', '\App\Admin\Controllers\ExcelController@downloadExcel');
             Route::post('/files/import', '\App\Admin\Controllers\ExcelController@import');//导入
         });
 

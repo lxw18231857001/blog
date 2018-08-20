@@ -21,14 +21,20 @@ Route::get('/registers', '\App\Http\Controllers\RegisterController@index')->name
 Route::post('/register', '\App\Http\Controllers\RegisterController@register');
 
 // 引导用户到新浪微博的登录授权页面
-Route::get('auth/weibo', 'Auth\AuthController@weibo');
+Route::get('auth/weibo', '\App\Http\Controllers\Auth\AuthController@weibo');
 // 用户授权后新浪微博回调的页面
-Route::get('auth/callback/', 'Auth\AuthController@callback');
+Route::get('auth/callback/', '\App\Http\Controllers\Auth\AuthController@callback');
 
 //qq登录授权页面
 Route::get('auth/qq', 'Auth\AuthController@qqlogin');
 //qq授权后回调的页面
 Route::get('auth/qqcallback/', 'Auth\AuthController@qqcallback');
+//手机快速登录页面
+Route::get('/phone', "\App\Http\Controllers\LoginController@phone");
+//发送短信
+Route::post('/sendsms', "\App\Http\Controllers\LoginController@sendSms");
+//手机登录处理
+Route::post('/phone/login', "\App\Http\Controllers\LoginController@phoneLogin");
 
 
 

@@ -17,7 +17,7 @@ class AuthController extends Controller
     public function weibo()
     {
         return Socialite::driver('weibo')->redirect();
-        // return \Socialite::with('weibo')->scopes(array('email'))->redirect();
+        // return \Socialite::with('WeiBo')->scopes(array('email'))->redirect();
     }
 
 
@@ -35,7 +35,7 @@ class AuthController extends Controller
 
         /* //从 Token（OAuth2）中获取用户信息
          $token = $oauthUser->token;
-         $user = Socialite::driver('weibo')->userFromToken($token);
+         $user = Socialite::driver('WeiBo')->userFromToken($token);
          dd($user);*/
 
         $where['sina_id'] = $sina_id;
@@ -82,7 +82,7 @@ class AuthController extends Controller
     public function qqlogin()
     {
         return Socialite::driver('qq')->redirect();
-        // return \Socialite::with('weibo')->scopes(array('email'))->redirect();
+        // return \Socialite::with('WeiBo')->scopes(array('email'))->redirect();
     }
 
     //qq回调地址

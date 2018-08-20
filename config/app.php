@@ -160,12 +160,15 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\ResponseMacroServiceProvider::class,
+        App\Providers\ComposerServiceProvider::class, //自定义的注册视图合成器的服务提供器
 
         Laravel\Scout\ScoutServiceProvider::class,
         Laravel\Scout\ScoutServiceProvider::class,
         ScoutEngines\Elasticsearch\ElasticsearchProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
-        SocialiteProviders\Manager\ServiceProvider::class, // add weibo
+        SocialiteProviders\Manager\ServiceProvider::class, // add WeiBo
+        Toplan\PhpSms\PhpSmsServiceProvider::class,  //add 短信
+        Toplan\Sms\SmsManagerServiceProvider::class,  //add 短信
 
     ],
 
@@ -217,6 +220,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class, // add
+        'PhpSms' => Toplan\PhpSms\Facades\Sms::class,              //add aliyun短信
+        'SmsManager' => Toplan\Sms\Facades\SmsManager::class,      //add aliyun短信
     ],
 
 ];

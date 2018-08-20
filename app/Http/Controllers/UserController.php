@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Rules\Ismobile;
 use Illuminate\Http\Request;
 use App\User;
 
@@ -20,9 +21,12 @@ class UserController extends Controller
 
         //验证
         $this->validate(\request(), [
-            'name' => 'required|min:3|unique:users,name',
+            'name' => 'required|min:3',
             'avatar' => 'image',
+            'tel' => ['required', new Ismobile],
+//          'tel' => ['required','unique:users,tel', new Ismobile],
         ]);
+
 
         //逻辑
 
@@ -33,6 +37,14 @@ class UserController extends Controller
                 return back()->withErrors(array('message' => '用户名已经注册'));
             }
             $user->name = $name;
+        }
+
+        $tel = $request->input('tel');
+        if ($tel != $user->tel) {
+            if(User::where('tel',$tel)->count()>0){
+                return back()->withErrors('该手机号已绑定，请重新绑定');
+            }
+            $user->tel = $tel;
         }
 
         if ($request->file('avatar')) {

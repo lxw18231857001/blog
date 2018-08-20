@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2018 �?08 �?06 �?17:04
+-- 生成日期: 2018 �?08 �?20 �?17:11
 -- 服务器版本: 5.5.53
 -- PHP 版本: 7.1.13
 
@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `admin_permission_role` (
   `permission_id` int(11) NOT NULL,
   `role_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=11 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=12 ;
 
 --
 -- 转存表中的数据 `admin_permission_role`
@@ -72,7 +72,8 @@ INSERT INTO `admin_permission_role` (`id`, `permission_id`, `role_id`) VALUES
 (7, 4, 5),
 (8, 3, 4),
 (9, 2, 3),
-(10, 5, 1);
+(10, 5, 1),
+(11, 3, 5);
 
 -- --------------------------------------------------------
 
@@ -148,12 +149,12 @@ CREATE TABLE IF NOT EXISTS `admin_users` (
 --
 
 INSERT INTO `admin_users` (`id`, `name`, `email`, `password`, `avatar`, `created_at`, `updated_at`, `status`) VALUES
-(4, 'admin12366', 'lixiaowang@welltrend.com.cn', '$2y$10$SghrFoz7kIcXhklCOL16ZeTVmUaU.QnJC7SVqZ/4NEP9CScMEApMy', '/storage/2018-07-19/BspKrNGkcS9wOAROHOoCAnQg4x1crrvfZFvN4WJV.jpeg', '2018-07-11 09:22:22', '2018-08-03 01:30:48', 1),
+(4, 'admin12366', 'lixiaowang@welltrend.com.cn', '$2y$10$lr5s6irvZywh5oLYAnHov.xYjnpiTHLS1aBo/S58xws4Igp9Jcr92', '/storage/2018-07-19/BspKrNGkcS9wOAROHOoCAnQg4x1crrvfZFvN4WJV.jpeg', '2018-07-11 09:22:22', '2018-08-16 09:42:09', 1),
 (5, 'admin123', 'admin123@qq.com', '$2y$10$fwCeS.3y6bWVe6gYVGSwIu6gJ8kvgq5HupxQEQh8UCuptYgGs.g6.', '/storage/2018-07-19/iHO6WfR8sAY7eRnmfrsP3Qtqp8DkKr3NFv5MCxSc.jpeg', '2018-07-12 01:26:10', '2018-07-25 06:45:33', 1),
 (6, 'admin1', 'admin1@qq.com', '$2y$10$cz4O0G26HTUBkTXv2zlYl.QELSUIegGUSLC8h2R65j0Pw89bJWZgG', '\\storage\\2018-07-24/20180226笔记.txt', '2018-07-12 02:37:53', '2018-07-25 06:45:35', 1),
 (7, 'lxw2', 'lxw@qq.com', '$2y$10$qRQc30Cgsz0VfXhBlhdUOeKPaunl4lsWfXv6ZC2KeItDeeh8vvsDC', '/storage/2018-07-17/hUJsX4ISzOuGWtDrBfNONRIWvGiwQlxBubYEiehG.jpeg', '2018-07-12 02:42:24', '2018-07-25 06:54:02', 1),
 (1, 'admin', 'admin@qq.com', '$2y$10$05cYCzgkFhRmSJI3xat/geMMjrQ7ixFOKcUNk.2nG/CdeI5F2Oxe2', '/storage/2018-07-17/I5opVaUmGBnd4dr7nfBWLssx9QZ5YOZTJi1HRhz0.jpeg', '2018-07-12 02:44:42', '2018-07-24 09:20:45', 1),
-(10, 'lxw', '1844912514@qq.com', '$2y$10$yaMLFDqnVCCgTNzng11GCugtzpR71y7CYn9dJI9Wls6i.TC02ZoM.', '/storage/2018-07-24/UQ8ZdZYAUew0DWrlGEIHEo9MPRixtrksbyvSXCpf.jpeg', '2018-07-24 01:28:28', '2018-07-25 07:05:52', 1);
+(10, 'lxw', '1844912514@qq.com', '$2y$10$gDe0j0e.QmJoyl0qmT4wGeBXMS6VGQ10UCyTXeRzUCJ7SdmGkEqG.', '/storage/2018-07-24/UQ8ZdZYAUew0DWrlGEIHEo9MPRixtrksbyvSXCpf.jpeg', '2018-06-24 01:28:28', '2018-05-17 05:16:39', 1);
 
 -- --------------------------------------------------------
 
@@ -215,7 +216,7 @@ CREATE TABLE IF NOT EXISTS `db_import` (
   `time` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `recard` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=19 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=16 ;
 
 --
 -- 转存表中的数据 `db_import`
@@ -232,14 +233,27 @@ INSERT INTO `db_import` (`id`, `name`, `job`, `phone`, `telphone`, `E-mail`, `so
 (8, '帅/北京', 'php', '1838792', '010-22222', '222222@qq.com', '电梯框架', '07-20-18', '已记录2'),
 (9, '李先生/天津', 'php', '13500334', '010-33333', '33333@qq.com', '今日头条', '07-20-18', '已记录3'),
 (10, '寇女士/天津', 'php', '18227111', '010-44444', '4444444@qq.com', '今日头条', '07-20-18', '已记录4'),
-(11, '强敏/北京', 'php', '1881008', '010-111111', '1111111@qq.com', '微信', '07-20-18', '已记录1'),
-(12, '马帅/北京', 'php', '1838792', '010-22222', '222222@qq.com', '网氪-电梯框架', '07-20-18', '已记录2'),
-(13, '李先生/天津', 'php', '13500334', '010-33333', '33333@qq.com', '今日头条', '07-20-18', '已记录3'),
-(14, '寇女士/天津', 'php', '18227111', '010-44444', '4444444@qq.com', '今日头条', '07-20-18', '已记录4'),
-(15, '强敏/北京', 'php', '1881008', '010-111111', '1111111@qq.com', '微信', '07-20-18', '已记录1'),
-(16, '马帅/北京', 'php', '1838792', '010-22222', '222222@qq.com', '网氪-电梯框架', '07-20-18', '已记录2'),
-(17, '李先生/天津', 'php', '13500334', '010-33333', '33333@qq.com', '今日头条', '07-20-18', '已记录3'),
-(18, '寇女士/天津', 'php', '18227111', '010-44444', '4444444@qq.com', '今日头条', '07-20-18', '已记录4');
+(11, 'lxw/天津', 'php', '18227111', '010-555', '4444444@qq.com', '今日头条', '07-20-18', '已记录4'),
+(12, '敏/北京', 'php', '1881008', '010-111111', '1111111@qq.com', '微信', '07-20-18', '已记录1'),
+(13, '帅/北京', 'php', '1838792', '010-22222', '222222@qq.com', '电梯框架', '07-20-18', '已记录2'),
+(14, '李先生/天津', 'php', '13500334', '010-33333', '33333@qq.com', '今日头条', '07-20-18', '已记录3'),
+(15, '寇女士/天津', 'php', '18227111', '010-44444', '4444444@qq.com', '今日头条', '07-20-18', '已记录4');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `failed_jobs`
+--
+
+CREATE TABLE IF NOT EXISTS `failed_jobs` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -254,7 +268,7 @@ CREATE TABLE IF NOT EXISTS `fans` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=16 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=18 ;
 
 --
 -- 转存表中的数据 `fans`
@@ -264,7 +278,9 @@ INSERT INTO `fans` (`id`, `fan_id`, `star_id`, `created_at`, `updated_at`) VALUE
 (12, 6, 5, '2018-07-12 05:19:40', '2018-07-12 05:19:40'),
 (10, 5, 6, '2018-07-10 06:56:41', '2018-07-10 06:56:41'),
 (14, 4, 6, '2018-07-24 01:08:20', '2018-07-24 01:08:20'),
-(15, 18, 6, '2018-08-06 08:57:06', '2018-08-06 08:57:06');
+(15, 18, 6, '2018-08-06 08:57:06', '2018-08-06 08:57:06'),
+(16, 22, 18, '2018-08-08 04:49:37', '2018-08-08 04:49:37'),
+(17, 18, 26, '2018-08-08 05:39:04', '2018-08-08 05:39:04');
 
 -- --------------------------------------------------------
 
@@ -305,14 +321,39 @@ CREATE TABLE IF NOT EXISTS `jobs` (
   `created_at` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `jobs_queue_index` (`queue`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=259 ;
 
 --
 -- 转存表中的数据 `jobs`
 --
 
 INSERT INTO `jobs` (`id`, `queue`, `payload`, `attempts`, `reserved_at`, `available_at`, `created_at`) VALUES
-(1, 'default', '{"displayName":"App\\\\Jobs\\\\SendEmail","job":"Illuminate\\\\Queue\\\\CallQueuedHandler@call","maxTries":null,"timeout":null,"timeoutAt":null,"data":{"commandName":"App\\\\Jobs\\\\SendEmail","command":"O:18:\\"App\\\\Jobs\\\\SendEmail\\":8:{s:7:\\"\\u0000*\\u0000user\\";O:45:\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\":4:{s:5:\\"class\\";s:13:\\"App\\\\AdminUser\\";s:2:\\"id\\";i:4;s:9:\\"relations\\";a:0:{}s:10:\\"connection\\";s:5:\\"mysql\\";}s:6:\\"\\u0000*\\u0000job\\";N;s:10:\\"connection\\";N;s:5:\\"queue\\";N;s:15:\\"chainConnection\\";N;s:10:\\"chainQueue\\";N;s:5:\\"delay\\";N;s:7:\\"chained\\";a:0:{}}"}}', 0, NULL, 1533259848, 1533259848);
+(257, 'default', '{"displayName":"App\\\\Jobs\\\\SendEmail","job":"Illuminate\\\\Queue\\\\CallQueuedHandler@call","maxTries":null,"timeout":null,"timeoutAt":null,"data":{"commandName":"App\\\\Jobs\\\\SendEmail","command":"O:18:\\"App\\\\Jobs\\\\SendEmail\\":8:{s:7:\\"\\u0000*\\u0000user\\";O:45:\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\":4:{s:5:\\"class\\";s:13:\\"App\\\\AdminUser\\";s:2:\\"id\\";i:4;s:9:\\"relations\\";a:0:{}s:10:\\"connection\\";s:5:\\"mysql\\";}s:6:\\"\\u0000*\\u0000job\\";N;s:10:\\"connection\\";N;s:5:\\"queue\\";N;s:15:\\"chainConnection\\";N;s:10:\\"chainQueue\\";N;s:5:\\"delay\\";N;s:7:\\"chained\\";a:0:{}}"}}', 0, NULL, 1534412529, 1534412529),
+(256, 'default', '{"displayName":"App\\\\Jobs\\\\SendEmail","job":"Illuminate\\\\Queue\\\\CallQueuedHandler@call","maxTries":null,"timeout":null,"timeoutAt":null,"data":{"commandName":"App\\\\Jobs\\\\SendEmail","command":"O:18:\\"App\\\\Jobs\\\\SendEmail\\":8:{s:7:\\"\\u0000*\\u0000user\\";O:45:\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\":4:{s:5:\\"class\\";s:13:\\"App\\\\AdminUser\\";s:2:\\"id\\";i:4;s:9:\\"relations\\";a:0:{}s:10:\\"connection\\";s:5:\\"mysql\\";}s:6:\\"\\u0000*\\u0000job\\";N;s:10:\\"connection\\";N;s:5:\\"queue\\";N;s:15:\\"chainConnection\\";N;s:10:\\"chainQueue\\";N;s:5:\\"delay\\";N;s:7:\\"chained\\";a:0:{}}"}}', 255, NULL, 1534412526, 1534412526),
+(258, 'default', '{"displayName":"App\\\\Jobs\\\\SendEmail","job":"Illuminate\\\\Queue\\\\CallQueuedHandler@call","maxTries":null,"timeout":null,"timeoutAt":null,"data":{"commandName":"App\\\\Jobs\\\\SendEmail","command":"O:18:\\"App\\\\Jobs\\\\SendEmail\\":8:{s:7:\\"\\u0000*\\u0000user\\";O:45:\\"Illuminate\\\\Contracts\\\\Database\\\\ModelIdentifier\\":4:{s:5:\\"class\\";s:13:\\"App\\\\AdminUser\\";s:2:\\"id\\";i:10;s:9:\\"relations\\";a:0:{}s:10:\\"connection\\";s:5:\\"mysql\\";}s:6:\\"\\u0000*\\u0000job\\";N;s:10:\\"connection\\";N;s:5:\\"queue\\";N;s:15:\\"chainConnection\\";N;s:10:\\"chainQueue\\";N;s:5:\\"delay\\";N;s:7:\\"chained\\";a:0:{}}"}}', 0, NULL, 1534482999, 1534482999);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `laravel_sms`
+--
+
+CREATE TABLE IF NOT EXISTS `laravel_sms` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `to` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `temp_id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `data` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `content` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `voice_code` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `fail_times` mediumint(9) NOT NULL DEFAULT '0',
+  `last_fail_time` int(10) unsigned NOT NULL DEFAULT '0',
+  `sent_time` int(10) unsigned NOT NULL DEFAULT '0',
+  `result_info` text COLLATE utf8mb4_unicode_ci,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -325,7 +366,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=20 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=22 ;
 
 --
 -- 转存表中的数据 `migrations`
@@ -350,7 +391,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (16, '2018_08_02_145510_create_third_login_table', 15),
 (17, '2018_08_02_150219_create_third_table', 15),
 (18, '2018_07_25_130243_create_jobs_table', 16),
-(19, '2018_08_02_151149_create_ttttt_table', 17);
+(19, '2018_08_02_151149_create_ttttt_table', 17),
+(20, '2015_12_21_111514_create_sms_table', 18),
+(21, '2018_08_16_173710_create_failed_jobs_table', 19);
 
 -- --------------------------------------------------------
 
@@ -407,7 +450,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `status` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=49 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=50 ;
 
 --
 -- 转存表中的数据 `posts`
@@ -429,7 +472,7 @@ INSERT INTO `posts` (`id`, `title`, `body`, `user_id`, `name`, `desc`, `created_
 (45, '人民日报海外版：荒谬的药方治不了美国的病', '<p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 人民日报海外版7月13日消息，近日，美方突然公布了拟对价值2000亿美元从中国进口商品加征关税清单，使贸易战加速升级。这是一种显然会伤害中美双边贸易，并将危害世界经济的挑衅行为，我们不禁要问：美方采取如此蛮横举措，道理何在？ \r\n</p><br><p> \r\n几位美国高官近日倒也在不断重复一套说辞，声称美国在对华贸易中受到了“不公平待遇”：中国通过“强制技术转让”手段，“盗窃”了美国技术，由此获得“不公平优势”。这套说辞来自今年早些时候发布的“对华301调查报告”，这份报告成了美方制定针对中国航空航天、信息技术、机器人和机械等领域产品加征关税清单的理由，而之后的2000亿美元清单理由则是中国采取反击措施。\r\n \r\n</p><br><p> \r\n美方这套理由及依此而生的举动是否站得住脚呢？对于“对华301调查报告”，就连美国自己的智库——彼得森国际经济研究所都忍不住站出来驳斥。该所发布研究报告指出，在知识产权方面，美国恰恰从中国获得了巨大的利益：近十年来，中国付给外国企业的技术许可费用增长了4倍，2017年达到近300亿美元，美国是其中最大获益者，收益增速也最快，2017年增幅达14%。中国公布数据显示，2017年，中国对外支付的知识产权使用费达到286亿美元，比2001年加入世贸组织时增长了15倍之多。\r\n \r\n</p><br><p> \r\n实际上，美国“对华301调查报告”混淆了微观层面的技术转移与宏观层面的技术扩散。在微观层面，外资企业对中国企业的技术转让主要是“技术使用有偿许可”，外资企业的技术所有权不但没有受到影响，反而获得了收益。这种契约是商业谈判形成的互利互惠合作，是典型的市场行为，政府无需干预。中外企业的技术合作和其他经贸合作完全是基于自愿原则实施的契约行为，多年来双方企业都从中获得了巨大利益。这也正是美国每年从中国获取大量知识产权收益的主要来源。\r\n \r\n</p><br><p> \r\n而在宏观层面，技术扩散是一种普遍规律，像“阿拉伯数字”扩散到全世界、电力技术普及到每个国家都是技术扩散现象。把“对华301调查报告”的逻辑用在美国自己身上的话，1886年德国人卡尔·本茨发明了世界上第一辆汽车，7年后美国人杜里埃造出了美国第一辆汽车，难道说美国“盗窃”了德国的汽车技术？\r\n \r\n</p><p><br></p>', 6, NULL, NULL, '2018-07-16 01:43:14', '2018-07-16 01:43:42', 0),
 (46, '海关总署：上半年贸易顺差9013.2亿元，收窄26.7%', '<p>国新发布7月13日消息：今日，国务院新闻办举行2018年上半年进出口情况发布会。海关总署新闻发言人黄颂平表示，今年以来，国内经济平稳运行，推动我国外贸进出口较快增长。据海关统计，上半年我国货物贸易进出口总值14.12万亿元人民币，比去年同期（下同）增长7.9%。其中，出口7.51万亿元，增长4.9%；进口6.61万亿元，增长11.5%；贸易顺差9013.2亿元，收窄26.7%。具体情况有以下几个方面：\r\n \r\n</p><br><p> 一般贸易进出口快速增长，贸易结构进一步优化。上半年，我国一般贸易进出口8.33万亿元，增长12.2%，占我国进出口总值的59%，比去年同期提升2.3个百分点。 \r\n</p><br><p> 对前三大贸易伙伴进出口保持增长，对中东欧国家进出口增势较好。上半年，我国对欧盟、美国和东盟进出口分别增长5.3%、5.2%和11%，3者合计占我国进出口总值的41%。同期，我国对中东欧16国进出口增长14.7%，高出全国整体增速6.8个百分点。 \r\n</p><br><p> \r\n民营企业进出口比重继续提升，内生动力不断增强。上半年，我国民营企业进出口5.52万亿元，增长11.2%，占我国进出口总值的39.1%，比去年同期提升1.2个百分点。其中，出口3.57万亿元，增长7.6%，占出口总值的47.5%，继续保持出口份额居首的地位；进口1.95万亿元，增长18.4%。\r\n \r\n</p><br><p> \r\n中西部、东北进出口增速高于全国整体，区域发展协调性增强。上半年，西部12省市外贸增速为17.8%，超过全国增速9.9个百分点；中部6省市外贸增速为13.2%，超过全国增速5.3个百分点；东北三省外贸增速为8.8%，超过全国增速0.9个百分点；东部10省市外贸增速为6.7%。\r\n \r\n</p><br><p> \r\n机电产品出口保持增长，出口提质增效稳步推进。上半年，我国机电产品出口4.4万亿元，增长7%，占我国出口总值的58.6%。其中，电器及电子产品出口增长8%，机械设备出口增长9%。同期，传统劳动密集型产品合计出口1.41万亿元，下降4.1%，占出口总值的18.7%。\r\n \r\n</p><br><p> \r\n原油、天然气、水海产品等商品进口量增加，扩大进口政策效应持续显现。上半年，我国进口原油2.25亿吨，增加5.8%；天然气4208万吨，增加35.4%；成品油1649万吨，增加9.7%；铜260万吨，增加16.3%。同期，水海产品进口量增加12.4%；化妆品增加1倍；医药品增加8%。\r\n \r\n</p><br><p> 黄颂平表示，总的看，上半年我国外贸进出口稳中有进，结构进一步优化，动力转换有所加快，质量效益稳步提高。但国际环境不稳定不确定性上升，未来我国外贸进出口平稳运行将面临一些挑战。\r\n      </p><p><br></p>', 6, NULL, NULL, '2018-07-16 01:50:11', '2018-07-16 01:50:11', 0),
 (47, '特朗普称对美国情报部门很有信心 这时屋里的灯灭了', '<p>【环球网报道记者赵衍龙】当地时间17日，特朗普召开白宫内阁会议，回应俄干预美国大选。特朗普称接受情报机构关于俄罗斯干预大选的结论，“非常相信美国情报机构”，美国福克斯新闻网的视频画面显示，这时灯突然灭了，之后又马上恢复。</p><p><img src="http://blog.com/storage/2018-07-20/3BVtinNPly440xnVDiZFodUfVtg3pwAzxFg2pdeh.jpeg" alt="test" style="max-width:100%;"></p><p><br></p>', 6, NULL, NULL, '2018-07-19 01:16:47', '2018-07-20 03:00:40', 0),
-(48, 'hehehhehehehh', '<p>hehehhehehehh</p><p><br></p>', 18, NULL, NULL, '2018-08-06 08:54:00', '2018-08-06 08:54:00', 0);
+(49, '车管所再次确认：8月起私家车都要安装这个小东西，还要准备500块', '<p>随着社会智能化的发展越来越先进，许多证件已经开始逐步使用电子形式的了。比如电子车牌，已经逐步在全国普及，不论是南京还是广州地区，很多省市已经开始采用电子车牌，而且规定私家车上电子车牌，如果交警在查车或者被电子眼拍到没有使用电子车牌，会被罚款500块。尤其是从8月起，各省市对电子车牌的要求更加严格。车管所再次确认：8月起私家车都要安装这个小东西，还要准备500块，因为如果不安装被查到就要被罚款500元。</p><p><br></p>', 26, NULL, NULL, '2018-08-16 01:16:32', '2018-08-16 01:16:32', 0);
 
 -- --------------------------------------------------------
 
@@ -484,20 +527,7 @@ CREATE TABLE IF NOT EXISTS `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('nxWUVZeIr6aFAkeeAYpgj1FTtgSi5fowygF1k6RG', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiOEVQUDhhOVlaMW5aQkdESHZySUxxQ0owS0RuTHg0ckt6OFhzMnVzcSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MTUxOiJodHRwOi8vdGVzdC5vcGVuLmxpeGlhb3dhbmcudG9wL2F1dGgvY2FsbGJhY2s/Y29kZT1kMWY0ODNiNjE5MTVhMWExODEzNGYwZTU4MGU0Yzc1ZiZzPSUyRmF1dGglMkZjYWxsYmFjayZzdGF0ZT05cWNYOUtVcFFjSjEyalBBMFlJdWxLbVpMRUhqMTlXZ3VlTlNLbXJiIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1533538910),
-('Z7Rl70R8QU5l86ljnSYB4NAwXYcOQXIs2BXu2WAY', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiTGliMEQyYjNwcHdXckoxTkJnZWg2ZjJYbVoxbUNQSlNzaEtuTGtyQSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NjA6Imh0dHA6Ly90ZXN0Lm9wZW4ubGl4aWFvd2FuZy50b3AvYXV0aC93ZWlibz9zPSUyRmF1dGglMkZ3ZWlibyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NToic3RhdGUiO3M6NDA6InZOVTliUlRhTGV2VmRsVlc2dklZZlM5N0xQTTE2Zk1UTnhLVHFDVXkiO30=', 1533540222),
-('7VqdT636mKiE3W3S0rKgwa8pclX2sCLzGZXr7pqe', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoicEk3ek56d2gyWFdjQ2pBaFFZMmROdkNuWG1mTTRGaUg5dXIwZTVOZiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NjA6Imh0dHA6Ly90ZXN0Lm9wZW4ubGl4aWFvd2FuZy50b3AvYXV0aC93ZWlibz9zPSUyRmF1dGglMkZ3ZWlibyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NToic3RhdGUiO3M6NDA6IjRmOEdqc2x1TnFiU0Y1RG9UdjhkVEdjd2xiWDNnSmMyZUt1SEJqankiO30=', 1533540435),
-('y8csWBM833FM6hQGZk3WwqidSAxXgglRbQWp83Nx', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiVzZtMWIyYmFaczlTQUlyZ21tM2toMWtVNE9Wd09VbHZ2TVpHdThLUyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly90ZXN0Lm9wZW4ubGl4aWFvd2FuZy50b3AiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1533541096),
-('MAt9K0Nbit77bZ2cW1juOFCbgDPSKIGQJxBGFJtf', 18, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiQTkzOEoyZWVSYXNDT3JqcXVKcXFqZXlYSE9ta2loUXBoaURDYUxzVSI7czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czo0ODoiaHR0cDovL3Rlc3Qub3Blbi5saXhpYW93YW5nLnRvcC9wb3N0cz9zPSUyRnBvc3RzIjt9czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDg6Imh0dHA6Ly90ZXN0Lm9wZW4ubGl4aWFvd2FuZy50b3AvcG9zdHM/cz0lMkZwb3N0cyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE4O30=', 1533546152),
-('Xorq6NWXQDfKaHKK1gnQlRwVViyztAdLXgDDaveO', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiczBBQ3lCUzUwNW1pWHFaVnFIYlNvNk8wQ1VFZ1VBZ04yUUdCZENjbCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly90ZXN0Lm9wZW4ubGl4aWFvd2FuZy50b3AiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1533542512),
-('1AGQ4jHGo8dSgJeUjOXUo0pmd94U7vvl8GqZjeAy', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiWHpKUEVsc2YzZnJqVWsxTjZrN1BWV3c0OW0zYU9jZU51MXZscmJSbCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MTUxOiJodHRwOi8vdGVzdC5vcGVuLmxpeGlhb3dhbmcudG9wL2F1dGgvY2FsbGJhY2s/Y29kZT0wNzFlODdmNzFlMzJmNDZiNGY1MGQ4NDFhYmQ2OGZjYSZzPSUyRmF1dGglMkZjYWxsYmFjayZzdGF0ZT02VUR1Smh4QVd6MFg1SVA2NHRNU01Qd2xwTDdjVU5NeEdPaW5VS2lVIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1533541475),
-('jW2bT9By1NzfriGVyUyQsMauMktVG0PhTejcIHr2', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiWEJOSVYwV3dKY0hqcDJ3aFlqNHc1QmtLcU9TeTZkN1Y1YmZvMkJvTCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly90ZXN0Lm9wZW4ubGl4aWFvd2FuZy50b3AiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjU6InN0YXRlIjtzOjQwOiJNWnJ3RGxtcW0yWkM3bEhsSThGZ3hrZHR3NXhFc2RSTlBsMlZBY21rIjt9', 1533541091),
-('TtxvLwfh789Zxtqj4bQ5d73I9bpNxQj2xF2ugAoC', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiVVRhdURZNXF6ZjVpSERTcGQ3YjhkMFprVE9pNFZvVFphWmNyZmRVSyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NjA6Imh0dHA6Ly90ZXN0Lm9wZW4ubGl4aWFvd2FuZy50b3AvYXV0aC93ZWlibz9zPSUyRmF1dGglMkZ3ZWlibyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NToic3RhdGUiO3M6NDA6IlVHanBpbFYxb3FXOVo3UlVnOThGQkJEV2c4UkVLUEp6WTdydjFPQm4iO30=', 1533540446),
-('8WdfZYTLHynVpS1wAYEEASEWBc9zGEjiCm30tYu9', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiSUFQNm9pM0hObDM0UXJrUm92UEdiUVVxMVlKZmxVUkZKRG8yOUZ0diI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly90ZXN0Lm9wZW4ubGl4aWFvd2FuZy50b3AiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1533542561),
-('iPEAosymBPtQhIoMM1OPgRznEF7Qvj7uuWRtqGa5', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiUkp0UUd5V0lENHhOUWFtbXU0cFVYT0dEU0Nzbkd3RVdzb3gyb3lwNSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly90ZXN0Lm9wZW4ubGl4aWFvd2FuZy50b3AiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1533542726),
-('UiVJEyid5ix7w0TgAlLsZ1N4EiN93E1nlhIZjN6A', 16, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoidjEzYkhKYk1DTzRXdGhMWjY0TGNydGhoeTN6QWgyVjR4ZG5rYWFLVyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly90ZXN0Lm9wZW4ubGl4aWFvd2FuZy50b3AiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxNjt9', 1533542860),
-('jmNh3dmTpYg9ICtwBabTU9zwdT9mqHj0pwXkFswv', 17, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiN01sVlJ6T2FlVmRoeUJ2eVA1eHVYdjc0MVQxeTFJMUJQWWxvTUg0QSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDg6Imh0dHA6Ly90ZXN0Lm9wZW4ubGl4aWFvd2FuZy50b3AvcG9zdHM/cz0lMkZwb3N0cyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE3O3M6MzoidXJsIjthOjE6e3M6ODoiaW50ZW5kZWQiO3M6NDg6Imh0dHA6Ly90ZXN0Lm9wZW4ubGl4aWFvd2FuZy50b3AvcG9zdHM/cz0lMkZwb3N0cyI7fX0=', 1533545564),
-('rezTXpVv2UZWox6lKu1KcTrvQ1Td4gKRbOMd34NB', 18, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoia1d1ZzhGb0Y2V3hWNm1iRUJDQWZDMElvUVM0TFI1UU05VWVyajFzYyI7czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czo0ODoiaHR0cDovL3Rlc3Qub3Blbi5saXhpYW93YW5nLnRvcC9wb3N0cz9zPSUyRnBvc3RzIjt9czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDg6Imh0dHA6Ly90ZXN0Lm9wZW4ubGl4aWFvd2FuZy50b3AvcG9zdHM/cz0lMkZwb3N0cyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE4O30=', 1533545914);
+('G6sFyt7fOKPU1ZgHwcOZsgnPgrsRX5peIbH7wm66', 26, '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoia2RVeUZiUjV1QjBNTkpOQVFNZXlGZVB5dEh5bjR2SHl4ZjlIYlhQUCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDg6Imh0dHA6Ly90ZXN0Lm9wZW4ubGl4aWFvd2FuZy50b3AvYWRtaW4/cz0lMkZhZG1pbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTI6ImxvZ2luX2FkbWluXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToyNjt9', 1534756247);
 
 -- --------------------------------------------------------
 
@@ -509,7 +539,7 @@ CREATE TABLE IF NOT EXISTS `third_logins` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(11) unsigned NOT NULL DEFAULT '0',
   `sina_id` int(11) unsigned DEFAULT NULL,
-  `qq_id` int(11) unsigned DEFAULT NULL,
+  `openid` varchar(32) CHARACTER SET utf8 DEFAULT NULL,
   `name` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
   `nickname` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
   `email` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
@@ -524,7 +554,7 @@ CREATE TABLE IF NOT EXISTS `third_logins` (
 -- 转存表中的数据 `third_logins`
 --
 
-INSERT INTO `third_logins` (`id`, `user_id`, `sina_id`, `qq_id`, `name`, `nickname`, `email`, `sina_avatar`, `qq_avatar`, `created_at`, `updated_at`) VALUES
+INSERT INTO `third_logins` (`id`, `user_id`, `sina_id`, `openid`, `name`, `nickname`, `email`, `sina_avatar`, `qq_avatar`, `created_at`, `updated_at`) VALUES
 (1, 0, 2147483647, NULL, NULL, 'lxw18231857001', NULL, 'http://tva1.sinaimg.cn/crop.109.42.273.273.180/0063xpjSjw8f911i1zjtzj30do09yq48.jpg', '', '2018-08-06 08:53:34', '2018-08-06 08:53:34');
 
 -- --------------------------------------------------------
@@ -560,7 +590,9 @@ CREATE TABLE IF NOT EXISTS `users` (
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `third_id` int(11) unsigned DEFAULT NULL,
+  `tel` char(11) CHARACTER SET utf8 NOT NULL DEFAULT '0' COMMENT '注册绑定手机号（手机号登录）',
+  `third_id` int(11) unsigned DEFAULT NULL COMMENT '微博用户id',
+  `openid` varchar(32) CHARACTER SET utf8 DEFAULT NULL COMMENT 'qq openid',
   `avatar` varchar(100) CHARACTER SET utf8 DEFAULT NULL COMMENT '头像',
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -568,21 +600,22 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`),
   KEY `email` (`email`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=19 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=27 ;
 
 --
 -- 转存表中的数据 `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `third_id`, `avatar`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'qqq', 'qq@qq.com', '$2y$10$5gMyOm/N0kqttl073TuOZedYmAuX1vM3kI/7e3s3c3xC8jUylZXJe', 0, NULL, NULL, '2018-07-04 07:55:47', '2018-07-04 07:55:47'),
-(2, 'www', 'www@qq.com', '$2y$10$mYGLugrPCqfxxFQ.SsS/fetSb/GH1mWZaaTlHQENyds02TS/8NnOO', 0, NULL, NULL, '2018-07-04 07:56:39', '2018-07-04 07:56:39'),
-(3, 'aaa', 'aa@qq.com', '$2y$10$3HnqvmYV3/uDK3O62nCZb.5HVcBbswd7zpGseY47Kf9eekxbvgzpm', 0, 'http://blog.com/storage/2018-07-10/dXQsZQF5hCZDguuofukTqYdoYRTqgECLuHUSXkkK.jpeg', NULL, '2018-07-04 08:03:08', '2018-07-04 08:03:08'),
-(4, 'lxw1', '1844912514@qq.com', '$2y$10$0Bgo7bC2VnPpsjFaBLnSuuDa1ByreczBOhq2m3cDC2coCPnZQ6f9u', 0, 'http://blog.com/storage/2018-07-10/dXQsZQF5hCZDguuofukTqYdoYRTqgECLuHUSXkkK.jpeg', '1ZYJZo3R9XflHMyyTwbQSHHqfTMiKx81q5FqwrftRRpSB7WvQq3JpzKGIaoZ', '2018-07-04 08:07:59', '2018-08-01 08:31:15'),
-(5, 'test', 'test@qq.com', '$2y$10$OwQQVo3UcrHy0jq.XPdvSOyWruC3CW7zFUEhFSODVc/GyelYf8YfG', 0, '/storage/2018-07-10/pGMf2vQvIblhBRgUZJ9xu6qGHtQXyzPjVdfIu7HD.jpeg', '5bxvs4MIzkZPYY5mk19WHXCxQVCg7Mx8mX95tje8OIjYy0FHHUoGkjGv62Dn', '2018-07-04 08:37:12', '2018-07-11 04:51:30'),
-(6, 'admin', 'lixiaowang@welltrend.com.cn', '$2y$10$AnfkeBy7n4.RhhdsoQ/TPOR/YroyL3ir8ZctVTLltbm8PFPhuV6Tm', 0, '/storage/2018-07-10/pGMf2vQvIblhBRgUZJ9xu6qGHtQXyzPjVdfIu7HD.jpeg', 'JANk3y1Xv9YucfGd8NKs9gyxFiA9gwheHFygw8GTSx9wQaQJoM0XuOpY1kSn', '2018-07-23 06:23:53', '2018-08-03 02:15:46'),
-(8, 'admin2', 'admin2@qq.com', '$2y$10$13yC3IQSbRTn5v2LdpnC9.Nj61q52wvJh61DBVX92C2D3jun2l4qW', 0, '/storage/2018-07-23/gpwQIAc0lCe6SIJKHVFz5xoat8pfV5XyaouiFEFo.jpeg', 'CGFWej2mFdkC3XYGZo1pLxLyDebYyHBH8tgVaEzR7CL1A8iNEHP6RjKXuBaj', '2018-07-23 07:10:28', '2018-07-23 07:11:46'),
-(18, 'lxw18231857001', 'luozhiqun@welltrend.com.cn', '$2y$10$R3fnKJffiKOkQQjCcyyip.1WnRpzmhdRkZ00agGzmzYT.OnPi/FKu', 2147483647, '/storage/2018-08-06/G7cdYPTXjAuLzAggSiYVfDbQwpVwami1amICitb6.png', 'pQOVdJeKlMgPYCvhRXheFW2LiPUfStDAGYbuQLFvmVNoDlMQ2Q5O9sdKdKoM', '2018-08-06 08:53:34', '2018-08-06 08:58:22');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `tel`, `third_id`, `openid`, `avatar`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'qqq', 'qq@qq.com', '$2y$10$5gMyOm/N0kqttl073TuOZedYmAuX1vM3kI/7e3s3c3xC8jUylZXJe', '', 0, '', NULL, NULL, '2018-07-04 07:55:47', '2018-07-04 07:55:47'),
+(2, 'www', 'www@qq.com', '$2y$10$mYGLugrPCqfxxFQ.SsS/fetSb/GH1mWZaaTlHQENyds02TS/8NnOO', '', 0, '', NULL, NULL, '2018-07-04 07:56:39', '2018-07-04 07:56:39'),
+(3, 'aaa', 'aa@qq.com', '$2y$10$3HnqvmYV3/uDK3O62nCZb.5HVcBbswd7zpGseY47Kf9eekxbvgzpm', '', 0, '', 'http://blog.com/storage/2018-07-10/dXQsZQF5hCZDguuofukTqYdoYRTqgECLuHUSXkkK.jpeg', NULL, '2018-07-04 08:03:08', '2018-07-04 08:03:08'),
+(4, 'lxw1', '1844912514@qq.com', '$2y$10$v41CcW1Ym14tb/4x9meuLuiyyXbtjlRPsQGQh8I0BbxlkTzjlzjXa', '', 0, '', 'http://blog.com/storage/2018-07-10/dXQsZQF5hCZDguuofukTqYdoYRTqgECLuHUSXkkK.jpeg', 'rvvEBn21dF92sS92BjneO1bPCsfxo0jj5dp5qKSj7Y2X4SHwX4lMiQcg70Vn', '2018-07-04 08:07:59', '2018-08-16 05:18:07'),
+(5, 'test', 'test@qq.com', '$2y$10$OwQQVo3UcrHy0jq.XPdvSOyWruC3CW7zFUEhFSODVc/GyelYf8YfG', '', 0, '', '/storage/2018-07-10/pGMf2vQvIblhBRgUZJ9xu6qGHtQXyzPjVdfIu7HD.jpeg', '5bxvs4MIzkZPYY5mk19WHXCxQVCg7Mx8mX95tje8OIjYy0FHHUoGkjGv62Dn', '2018-07-04 08:37:12', '2018-07-11 04:51:30'),
+(6, 'admin', 'lixiaowang@welltrend.com.cn', '$2y$10$AnfkeBy7n4.RhhdsoQ/TPOR/YroyL3ir8ZctVTLltbm8PFPhuV6Tm', '', 0, '', '/storage/2018-07-10/pGMf2vQvIblhBRgUZJ9xu6qGHtQXyzPjVdfIu7HD.jpeg', 'JANk3y1Xv9YucfGd8NKs9gyxFiA9gwheHFygw8GTSx9wQaQJoM0XuOpY1kSn', '2018-07-23 06:23:53', '2018-08-03 02:15:46'),
+(8, 'admin2', 'admin2@qq.com', '$2y$10$13yC3IQSbRTn5v2LdpnC9.Nj61q52wvJh61DBVX92C2D3jun2l4qW', '', 0, '', '/storage/2018-07-23/gpwQIAc0lCe6SIJKHVFz5xoat8pfV5XyaouiFEFo.jpeg', 'CGFWej2mFdkC3XYGZo1pLxLyDebYyHBH8tgVaEzR7CL1A8iNEHP6RjKXuBaj', '2018-07-23 07:10:28', '2018-07-23 07:11:46'),
+(18, 'lxw18231857001', 'luozhiqun@welltrend.com.cn', '$2y$10$R3fnKJffiKOkQQjCcyyip.1WnRpzmhdRkZ00agGzmzYT.OnPi/FKu', '18231857002', 2147483647, '', '/storage/2018-08-06/G7cdYPTXjAuLzAggSiYVfDbQwpVwami1amICitb6.png', 'itj0P0Bk6HNJFbI984sjLHWZlFEUoIygGqJBUR67uLYrkCh9XX9k0kwWFRBQ', '2018-08-06 08:53:34', '2018-08-06 08:58:22'),
+(26, '青春阳光', '18231857001@welltrend.com.cn', '$2y$10$WQ8yrRLs4TEBRDTxEaV3cuqTOi3jeVgfKBuKzFfJ79UkES1lMNhnS', '18231857001', NULL, 'F484C06DAF4FFE33463BA5F98D1F6B0C', '/storage/2018-08-08/xqf0ddCGCZoRdJ5gowXWNhW7ptGBIK86qI9zK1i6.jpeg', 'ewwL7pYeb4SHrVuqgDF8LXBvMBGQOV16c1MUocfTT5sTLwI8ZCKmULgqPI7b', '2018-08-08 05:07:17', '2018-08-15 02:39:47');
 
 -- --------------------------------------------------------
 

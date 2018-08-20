@@ -34,7 +34,7 @@
 
     <form class="form-signin" method="POST" action="/login">
         {{csrf_field()}}
-        <h2 class="form-signin-heading">请登录</h2>
+        <h2 class="form-signin-heading">请登录 <a href="/phone"><h5 style="float: right">手机快速登录</h5></a></h2>
         <label for="inputEmail" class="sr-only">邮箱</label>
         <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required
                autofocus>

@@ -95,7 +95,7 @@ class UserController extends Controller
         ];
     }
 
-    //只要定义一个获取器
+    //只要定义一个获取器  访问器
     public function getInitPwdAttribute()
     {
         return $this->attributes['initPwd'];
@@ -104,10 +104,9 @@ class UserController extends Controller
     //重置密码逻辑
     public function resetPassword(Request $request, AdminUser $user)
     {
-        $initPwd = env('INIT_PWD', '123456');
+        $initPwd = env('INIT_PWD');
         $user->password = bcrypt($initPwd);
         $user->save();
-
         //TODO  一定在save后，否则报错在数据库找不到该字段
         $user->init_pwd = $initPwd;
         //重置密码的同时 发送邮件通知后台管理人员
@@ -121,7 +120,7 @@ class UserController extends Controller
 
         //队列延迟分发 将邮件消息加入队列
         //创建发送逻辑
-       dispatch(new SendEmail($user));
+        $this->dispatch(new SendEmail($user));
 
 //        Mail::to($user)->cc($adminUser)->queue(new ResetPwd($user));
 

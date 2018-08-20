@@ -11,6 +11,12 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label class="col-sm-2 control-label">手机号</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" name="tel" type="text" value="{{$user->tel}}">
+                    </div>
+                </div>
+                <div class="form-group">
                     <label class="col-sm-2 control-label">头像</label>
                     <div class="col-sm-2">
                         <input class=" file-loading preview_input" type="file"  style="width:72px" name="avatar">

@@ -12,18 +12,18 @@
     <title>博客-@yield('title')</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
 
 
     <!-- Custom styles for this template -->
-    <link href="/css/blog.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/wangEditor.min.css">
+    <link href="{{asset('/css/blog.css')}}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{asset('/css/wangEditor.min.css')}}">
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src=''></script>
+    <script src="{{asset('/js/respond.min.js')}}"></script>
 
     <![endif]-->
 </head>
@@ -49,10 +49,10 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/js/wangEditor.min.js"></script>
-<script src="/js/ylaravel.js"></script>
+<script src="{{asset('js/jquery.min.js')}}"></script>
+<script src="{{asset('/js/bootstrap.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('/js/wangEditor.min.js')}}"></script>
+<script src="{{asset('/js/ylaravel.js')}}"></script>
 
 </body>
 </html>

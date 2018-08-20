@@ -116,5 +116,7 @@ return [
         // 'name'         => '名字',
         // 'age'         => '年龄',
     ],
+    'uppercase'              => ':attribute 必须是大写字母',
+    'ismobile'              => ':attribute 手机号码不合法',
 
 ];
