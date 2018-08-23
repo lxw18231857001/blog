@@ -27,7 +27,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="http://blog.com/admin/">后台网址</a>
+        <a href="{{url('/admin')}}">后台网址</a>
     </div>
     <div class="login-box-body">
         <p class="login-box-msg">后台密码重置通知</p>
