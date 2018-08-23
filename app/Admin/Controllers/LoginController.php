@@ -17,17 +17,18 @@ class LoginController extends Controller
     //登录逻辑
     public function login()
     {
+
         $this->validate(\request(), [
             'name' => 'required|min:3',
-            'password' => 'required'
+            'password' => 'required',
+            'captcha' => 'required|captcha',  //后面的这个captcha，是验证的不用写逻辑
         ]);
-        $adminUser=request(['name','password']);
 
-        if(\Auth::guard('admin')->attempt($adminUser)==true){
-            return redirect('/admin/index');
-        }
-
-        return  \Redirect::back()->withErrors('账号密码不匹配');
+           $adminUser=request(['name','password']);
+           if(\Auth::guard('admin')->attempt($adminUser)==true){
+               return redirect('/admin/index');
+           }
+           return  \Redirect::back()->withErrors('账号密码不匹配');
     }
 
 

@@ -113,10 +113,14 @@ return [
     */
 
     'attributes' => [
-        // 'name'         => '名字',
+        // 'name'        => '名字',
         // 'age'         => '年龄',
+        'ismobile'        => '手机号码',
+        'captcha'        => '验证码',
     ],
-    'uppercase'              => ':attribute 必须是大写字母',
-    'ismobile'              => ':attribute 手机号码不合法',
+    //自定义的
+    'uppercase'             => ':attribute 必须是大写字母',
+    'ismobile'              => ':attribute 不合法',
+    'captcha'               => ':attribute 不正确',
 
 ];

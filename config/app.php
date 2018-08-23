@@ -169,6 +169,7 @@ return [
         SocialiteProviders\Manager\ServiceProvider::class, // add WeiBo
         Toplan\PhpSms\PhpSmsServiceProvider::class,  //add 短信
         Toplan\Sms\SmsManagerServiceProvider::class,  //add 短信
+        Mews\Captcha\CaptchaServiceProvider::class,  //add 验证码
 
     ],
 
@@ -222,6 +223,7 @@ return [
         'Socialite' => Laravel\Socialite\Facades\Socialite::class, // add
         'PhpSms' => Toplan\PhpSms\Facades\Sms::class,              //add aliyun短信
         'SmsManager' => Toplan\Sms\Facades\SmsManager::class,      //add aliyun短信
+        'Captcha' => Mews\Captcha\Facades\Captcha::class,          //add 验证码
     ],
 
 ];

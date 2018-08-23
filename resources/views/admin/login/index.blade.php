@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,7 +34,7 @@
         <p class="login-box-msg">登陆</p>
 
         <form action="/admin/login" method="post">
-                {{csrf_field()}}
+            {{csrf_field()}}
             <div class="form-group has-feedback">
                 <input name="name" type="text" class="form-control" placeholder="名字">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -44,6 +43,13 @@
                 <input name="password" type="password" class="form-control" placeholder="密码">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
+            <div class="form-group has-feedback">
+                <input name="captcha" type="text" class="form-control {{$errors->has('captcha')?'parsley-error':''}}" placeholder="验证码">
+                    <img class="thumbnail captcha" style="cursor: pointer" src="{{captcha_src('flat')}}"
+                         onclick="this.src='{{captcha_src('flat')}}'+Math.random()" alt="验证码" title="点击图片重新获取验证码">
+                <span class="glyphicon form-control-feedback"></span>
+            </div>
+
             @include('layout.error')
             <div class="row">
                 <!-- /.col -->
