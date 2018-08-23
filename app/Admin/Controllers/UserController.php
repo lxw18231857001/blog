@@ -113,15 +113,14 @@ class UserController extends Controller
         $adminUser = config('constants.ADMIN_EMAIL');
 //        dd(\config('constants.ADMIN_USER'));
         // 方法一：直接发送
-        /*Mail::to($user)
+       /* Mail::to($user)
             ->cc($adminUser)//抄送人
       //    ->bcc($adminUser)//暗抄送
             ->send(new ResetPwd($user));*/
-
+//dd($user->init_pwd);
         //方法二：队列延迟分发 将邮件消息加入队列
         //创建发送逻辑  php artisan queue:work 启动队列
         $this->dispatch(new SendEmail($user));
-//       $res= $this->dispatch(new SendEmail($user));
 //        Mail::to($user)->cc($adminUser)->queue(new ResetPwd($user));
 
         return back();

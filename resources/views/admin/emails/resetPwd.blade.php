@@ -35,8 +35,11 @@
         <div class="form-group has-feedback">
             <p>你好！{{$user->name}}先生/女士,
                 您的邮箱为:{{$user->email}}，
-                您的头像为:<img src="http://blog.com/{{$user->avatar}}">，
+                您的头像为:<img src="{{url('/')}}/{{$user->avatar}}">，
                 你重置后的密码为：{{$user->init_pwd}}.
+                @php
+                echo env('INIT_PWD');
+                @endphp
             </p>
 
 {{--            <img src="{{ $message->embed(public_path().$user->avatar) }}">--}}
