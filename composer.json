@@ -12,6 +12,7 @@
     "algolia/algoliasearch-client-php": "^1.27",
     "almasaeed2010/adminlte": "~2.0",
     "fideloper/proxy": "^4.0",
+    "geoip2/geoip2": "^2.9",
     "guzzlehttp/guzzle": "^6.3",
     "laravel/framework": "5.6.*",
     "laravel/scout": "^4.0",
@@ -22,7 +23,8 @@
     "socialiteproviders/qq": "^3.0",
     "socialiteproviders/weibo": "^3.0",
     "tamayo/laravel-scout-elastic": "^3.0",
-    "toplan/laravel-sms": "~2.6"
+    "toplan/laravel-sms": "~2.6",
+    "torann/geoip": "^1.0"
   },
   "require-dev": {
     "filp/whoops": "^2.0",

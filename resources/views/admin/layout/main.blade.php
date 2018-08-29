@@ -46,6 +46,7 @@
     <!-- /.control-sidebar -->
     <!-- Add the sidebar's background. This div must be placed
          immediately after the control sidebar -->
+    @include('admin.layout.footer')
     <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
